@@ -11,6 +11,10 @@ const Sidebar = () => {
             <img src={assets.add_icon} />
             <span>Add Items</span>
         </Link>
+        <Link to="/category" className={location.pathname==="/category"?"active":""} >
+            <img src={assets.add_icon} />
+            <span>Add Category</span>
+        </Link>
         <Link to="/listItem" className={location.pathname==="/listItem"?"active":""}>
             <img src={assets.order_icon} />
             <span>List Items</span>

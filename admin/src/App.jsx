@@ -8,6 +8,7 @@ import Orders from "./Pages/Orders/Orders"
 import "./App.css"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AddCategory from './Pages/AddCategory/AddCategory'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <div className='page-content-container'>
           <Routes>
             <Route path='/' element={<AddItem />} />
+            <Route path='/category' element={<AddCategory />} />
             <Route path='/listItem' element={<ListItem />} />
             <Route path='/orders' element={<Orders />} />
           </Routes>
