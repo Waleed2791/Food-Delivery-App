@@ -3,7 +3,7 @@ import { StoreContext } from '../StoreContext/StoreContext'
 import FoodItem from './FoodItem'
 
 const FoodListing = ({category}) => {
-  const { food_list } = useContext(StoreContext)
+  const { food_list, server_port_url } = useContext(StoreContext)
   return (
     <div className='food-listing'>
       <h1>Top Dishes Near You</h1>
@@ -13,7 +13,8 @@ const FoodListing = ({category}) => {
                 return (
                     <FoodItem
                         key={index}
-                        item={item}>
+                        item={item}
+                        server_port={server_port_url}>
                     </FoodItem>
                 )
             }

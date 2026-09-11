@@ -1,11 +1,24 @@
 import React, { createContext, useState, useEffect } from "react";
-import { food_list } from "../../assets/assets";
+import axios from "axios"
 
 export const StoreContext = createContext(null);
 
 const EXPIRY_MS = 30 * 60 * 1000;
 
 const StoreContextProvider = (props) => {
+
+    const [food_list, setFood_list] = useState([]);
+
+    const server_port_url = "http://localhost:4000"
+
+    const get_food_list = async () => {
+        const response = await axios.get(`${server_port_url}/api/foodItem/list`)
+        setFood_list(response.data.data);
+    }
+
+    useEffect(() => {
+        get_food_list();
+    }, []);
 
     const [CartItem, setCartItem] = useState(()=>{
         const savedCart = localStorage.getItem('cartItems');
@@ -81,6 +94,7 @@ const StoreContextProvider = (props) => {
     }
 
     const StoreContextValue = {
+        server_port_url,
         food_list,
         CartItem,
         add_to_cart,

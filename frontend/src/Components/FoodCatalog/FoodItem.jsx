@@ -2,11 +2,11 @@ import React from 'react'
 import { assets } from '../../assets/assets'
 import QuantitySelector from './QuantitySelector'
 
-const FoodItem = ({item}) => {
+const FoodItem = ({item, server_port}) => {
   return (
     <div className='fooditem'>
       <div className='food-item-image-container'>
-        <img src={item['image']} alt={item['name']} />
+        <img src={`${server_port}/uploads/${item['image']}`} alt={item['name']} />
         <QuantitySelector item_id={item['_id']} ></QuantitySelector>
       </div>
       <div className='fooditem-content'>
