@@ -1,0 +1,17 @@
+.admin-navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #cbcbcb;
+    padding: 1vw 4vw;
+    box-sizing: border-box;
+}
+.admin-navbar-container img:nth-child(1) {
+    width: 12vw;
+    cursor: pointer;
+}
+.admin-navbar-container img:nth-child(2) {
+    width: 3.5vw;
+    cursor: pointer;
+}

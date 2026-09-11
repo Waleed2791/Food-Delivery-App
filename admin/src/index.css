@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Outfit;
+    color: #49557E;
+}
+a {
+    text-decoration-line: none;
+}
+h1,h2,h3,h4,h5,h6,p {
+    color: #505050;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.app {
+    width: 100%;
+}
