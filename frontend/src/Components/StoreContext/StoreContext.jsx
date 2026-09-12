@@ -12,7 +12,6 @@ const StoreContextProvider = (props) => {
     const [menu_list, setmenu_list] = useState([]);
     const get_menu_list = async () => {
         const response = await axios.get(`${server_port_url}/api/category/list`)
-        console.log(response.data.response)
         setmenu_list(response.data.response)
     }
     useEffect(() => {

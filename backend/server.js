@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import connectDB from './config/db.js'
 import addfood from './routes/FoodRoutes.js'
 import CategoryRouter from './routes/categoryRoutes.js'
+import UserRouter from './routes/UserRouter.js'
 
 // Dotend Donfig
 dotenv.config()
@@ -26,6 +27,7 @@ connectDB()
 app.use("/uploads", express.static("uploads"));
 app.use('/api/foodItem', addfood)
 app.use('/api/category', CategoryRouter)
+app.use('/api/users', UserRouter)
 
 app.get('/', (req, res)=>{
     res.send("API WORKING!")
