@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import FoodCategory from './FoodCategory'
 import './FoodCatalog.css'
-import { menu_list } from '../../assets/assets'
 import FoodListing from './FoodListing'
+import { StoreContext } from '../StoreContext/StoreContext'
 
 const FoodCatalog = () => {
+  const { menu_list, server_port_url } = useContext(StoreContext)
   const [Category, setCategory] = useState('ALL')
   return (
     <div className='catalog-container' id='catalog-section'>
@@ -18,7 +19,8 @@ const FoodCatalog = () => {
                             key={index} 
                             category={Category} 
                             setCategory={setCategory} 
-                            item={item}>
+                            item={item}
+                            server_port={server_port_url}>
                         </FoodCategory>
                     )
                 })}

@@ -1,10 +1,10 @@
 import React from 'react'
 
-const FoodCategory = ({category, setCategory, item}) => {
+const FoodCategory = ({category, setCategory, item, server_port}) => {
   return (
-    <div className={`foodCategoryItem ${category === item.menu_name ? 'active' : ''}`} onClick = {() => setCategory(prev => prev === item.menu_name?'ALL':item.menu_name)}>
-        <img src={item.menu_image} />
-        <p>{item.menu_name}</p>
+    <div className={`foodCategoryItem ${category === item.name ? 'active' : ''}`} onClick = {() => setCategory(prev => prev === item.name?'ALL':item.name)}>
+        <img src={`${server_port}/uploads/${item.image}`} />
+        <p>{item.name}</p>
     </div>
   )
 }

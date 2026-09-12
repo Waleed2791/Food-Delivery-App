@@ -7,15 +7,23 @@ const EXPIRY_MS = 30 * 60 * 1000;
 
 const StoreContextProvider = (props) => {
 
-    const [food_list, setFood_list] = useState([]);
-
     const server_port_url = "http://localhost:4000"
 
+    const [menu_list, setmenu_list] = useState([]);
+    const get_menu_list = async () => {
+        const response = await axios.get(`${server_port_url}/api/category/list`)
+        console.log(response.data.response)
+        setmenu_list(response.data.response)
+    }
+    useEffect(() => {
+        get_menu_list();
+    }, []);
+
+    const [food_list, setFood_list] = useState([]);
     const get_food_list = async () => {
         const response = await axios.get(`${server_port_url}/api/foodItem/list`)
         setFood_list(response.data.data);
     }
-
     useEffect(() => {
         get_food_list();
     }, []);
@@ -96,6 +104,7 @@ const StoreContextProvider = (props) => {
     const StoreContextValue = {
         server_port_url,
         food_list,
+        menu_list,
         CartItem,
         add_to_cart,
         remove_cart,
