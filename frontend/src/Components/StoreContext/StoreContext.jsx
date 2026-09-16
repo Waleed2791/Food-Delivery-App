@@ -100,6 +100,21 @@ const StoreContextProvider = (props) => {
         return {cartAmount, grandTotal};
     }
 
+
+    const [ LoginUser, setLoginUser ] = useState(()=>{
+        const login_User = localStorage.getItem('loggedUser')
+        if (!login_User) {
+            return null;
+        } 
+        return JSON.parse(login_User);
+    })
+
+    const logoutUser = () => {
+        localStorage.removeItem('loggedUser')
+        setLoginUser(null);
+    }
+
+
     const StoreContextValue = {
         server_port_url,
         food_list,
@@ -110,7 +125,10 @@ const StoreContextProvider = (props) => {
         TotalCartQuantity,
         Remove_whole_item_form_cart,
         getGrandTotalAmount,
-        deliveryFee
+        deliveryFee,
+        LoginUser,
+        setLoginUser,
+        logoutUser
     }
 
     return(

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import './navbar.css'
 import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom'
@@ -11,7 +11,13 @@ function navbar({ShowAuthModal}) {
         setMenu(menuName)
         document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
     }
-    const { TotalCartQuantity } = useContext(StoreContext)
+    const { TotalCartQuantity, LoginUser, logoutUser } = useContext(StoreContext)
+
+    const [ UserMenu, setUserMenu ] = useState(false)
+    useEffect(() => {
+        setUserMenu(false);
+    }, [LoginUser]);
+
   return (
     <div className='navbar-container'>
         <div className='logo-container'>
@@ -39,7 +45,24 @@ function navbar({ShowAuthModal}) {
                     </Link>
                 </li>
                 <li>
-                    <button className='auth-button' onClick={()=>ShowAuthModal(true)}>Sign In</button>
+                    {LoginUser
+                        ?   
+                            <div className='user-profile-outer-container' onClick={ () => {setUserMenu((prev) => prev ? false : true)} }>
+                                <div className='user-profile-container'>
+                                    <p>
+                                        <span>{LoginUser.name} <i className={UserMenu ? "fa fa-chevron-up" : "fa fa-chevron-down"} aria-hidden="true"></i></span>
+                                        <span>{LoginUser.email}</span>
+                                    </p>
+                                    <img src={assets.profile_icon} alt={LoginUser.name} />
+                                </div>
+                                <ul className='menu-list-container' style={{ display: UserMenu===true? "block" : "none" }} >
+                                    <li>My Orders</li>
+                                    <li onClick={(e)=>{ e.stopPropagation(); logoutUser();}}><img src={assets.logout_icon} alt='logout' /> <span>Sign Out</span></li>
+                                </ul>
+                            </div>
+                        :
+                            <button className='auth-button' onClick={()=>ShowAuthModal(true)}>Sign In</button>
+                    }
                 </li>
             </ul>
         </div>

@@ -56,10 +56,10 @@ const RegisterUser = async (req, res) => {
 
     res.json({
         success: true,
-        token,
         user: {
             name: user.name,
             email: user.email,
+            token: token,
         }
     });
 };
@@ -107,10 +107,10 @@ const loginUser = async (req, res) => {
 
     res.json({
         success: true,
-        token,
         user: {
             name: user.name,
             email: user.email,
+            token: token,
         }
     });
 

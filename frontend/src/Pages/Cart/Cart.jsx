@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Cart = () => {
-  const { food_list, CartItem, Remove_whole_item_form_cart, getGrandTotalAmount, deliveryFee } = useContext(StoreContext)
+  const { server_port_url, food_list, CartItem, Remove_whole_item_form_cart, getGrandTotalAmount, deliveryFee } = useContext(StoreContext)
   const { cartAmount, grandTotal } = getGrandTotalAmount();
 
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ const Cart = () => {
                                 const iteminfo = food_list.find((product) => {return product._id === item_id})
                                 return (
                                     <tr key={item_id}>
-                                        <td className='cartitem-image'><img src={iteminfo.image} /></td>
+                                        <td className='cartitem-image'><img src={`${server_port_url}/uploads/${iteminfo.image}`} /></td>
                                         <td className='cartitem-name'>{iteminfo.name}</td>
                                         <td className='cartitem-price'>{`$${iteminfo.price}`}</td>
                                         <td className='cartitem-qty'><QuantitySelector item_id={iteminfo._id} ></QuantitySelector></td>

@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './AuthModal.css'
 import { assets } from '../../assets/assets'
 import { toast } from 'react-toastify'
 import axios from 'axios'
+import { StoreContext } from '../StoreContext/StoreContext'
 
 const AuthModal = ({hideAuthModal}) => {
+  const { setLoginUser } = useContext(StoreContext)
   const [form, setform] = useState('Login');
   const [data, setdata] = useState({
     name: "",
@@ -38,14 +40,28 @@ const AuthModal = ({hideAuthModal}) => {
       try {
 
         const response = await axios.post("http://localhost:4000/api/users/login", {email, password})
-        console.log(response.data);
+        const Login_User = response.data.user
+        if (response.data.success) {
+          localStorage.setItem('loggedUser', JSON.stringify(Login_User));
+          setLoginUser(Login_User);
+          toast.success(`Welcome ${Login_User.name}!`)
+          hideAuthModal(false)
+          setdata({
+            name: "",
+            email: "",
+            password: "",
+            policy_check: false,
+          })
+        } else {
+          toast.error("Invalid email or password")
+        }
         
       } catch (error) {
 
         console.log(error);
         toast.error(
             error.response?.data?.message ||
-            "Something went wrong"
+            "Invalid email or password"
         );
 
       }
@@ -68,14 +84,28 @@ const AuthModal = ({hideAuthModal}) => {
       try {
 
         const response = await axios.post("http://localhost:4000/api/users/add", {name, email, password})
-        console.log(response.data);
+        const Register_User = response.data.user
+        if (response.data.success) {
+          localStorage.setItem('loggedUser', JSON.stringify(Register_User));
+          setLoginUser(Login_User);
+          toast.success(`Welcome ${Register_User.name}!`)
+          hideAuthModal(false)
+          setdata({
+            name: "",
+            email: "",
+            password: "",
+            policy_check: false,
+          })
+        } else {
+          toast.error("Invalid email or password")
+        }
         
       } catch (error) {
 
         console.log(error);
         toast.error(
             error.response?.data?.message ||
-            "Something went wrong"
+            "Something went wrong! Try again later."
         );
 
       }
