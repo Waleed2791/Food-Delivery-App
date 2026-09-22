@@ -1,0 +1,68 @@
+.app-download {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    padding: 5vw 0 8vw 0;
+}
+.app-download h1 {
+    color: black;
+    font-size: 3vw;
+    font-weight: 500;
+}
+.app-download-platform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5vw;
+}
+.app-download-platform img[alt='playstore'] {
+    width: 15vw;
+}
+.app-download-platform img[alt='appstore'] {
+    width: 14vw;
+}
+
+@media (max-width:950px) {
+    .app-download {
+        padding: 10vw 0 13vw 0;
+    }
+    .app-download h1 {
+        font-size: 4vw;
+    }
+    .app-download-platform img[alt='playstore'] {
+        width: 20vw;
+    }
+    .app-download-platform img[alt='appstore'] {
+        width: 19vw;
+    }
+}
+@media (max-width:768px) {
+    .app-download {
+        padding: 12vw 0 16vw 0;
+    }
+    .app-download h1 {
+        font-size: 4.8vw;
+    }
+    .app-download-platform img[alt='playstore'] {
+        width: 24vw;
+    }
+    .app-download-platform img[alt='appstore'] {
+        width: 23vw;
+    }
+}
+@media (max-width:600px) {
+    .app-download {
+        padding: 15vw 0 20vw 0;
+    }
+    .app-download h1 {
+        font-size: 5.8vw;
+    }
+    .app-download-platform img[alt='playstore'] {
+        width: 28vw;
+    }
+    .app-download-platform img[alt='appstore'] {
+        width: 27vw;
+    }
+}

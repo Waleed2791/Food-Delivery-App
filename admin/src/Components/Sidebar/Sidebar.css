@@ -1,0 +1,35 @@
+.siderbar-items-container {
+    position: absolute;
+    top: 4vw;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.siderbar-items-container a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.25vw;
+    margin: 1.5vw 0;
+    padding: 0.85vw 5vw 0.85vw 0.85vw;
+    border-top: 2px solid #cbcbcb;
+    border-bottom: 2px solid #cbcbcb;
+    border-left: 2px solid #cbcbcb;
+    cursor: pointer;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background-color: white;
+}
+.siderbar-items-container a.active {
+    background-color: #ff4c2442;
+    border-color: #ff4c2442;
+}
+.siderbar-items-container a img {
+    width: 2vw;
+}
+.siderbar-items-container a span {
+    font-size: 1.1vw;
+    font-weight: 600;
+    color: #454545;
+}

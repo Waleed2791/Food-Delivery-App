@@ -1,0 +1,20 @@
+.flx-layout {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.sidebar-container {
+    width: 20%;
+    height: auto;
+    min-height: 100vh;
+    border-right: 2px solid #cbcbcb;
+    position: relative;
+}
+.page-content-container {
+    width: 80%;
+    height: 100%;
+    min-height: 100vh;
+    padding: 4vw 6vw;
+    box-sizing: border-box;
+}

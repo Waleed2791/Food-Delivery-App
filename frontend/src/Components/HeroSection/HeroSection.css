@@ -1,0 +1,121 @@
+.hero-container {
+    width: 100%;
+    height: 40vw;
+    background: url(/header_img.png) no-repeat;
+    background-size: cover;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 1.5vw;
+    position: relative;
+}
+.hero-overlay-container {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.185;
+}
+.hero-inner-container {
+    width: 52%;
+    position: absolute;
+    bottom: 5.5vw;
+    left: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+}
+.hero-inner-container h2 {
+    color: white;
+    font-size: 4vw;
+    font-weight: 600;
+    line-height: 4.8vw;
+}
+.hero-inner-container p {
+    color: white;
+    font-size: 1.35vw;
+    line-height: 1.55vw;
+}
+.hero-inner-container button {
+    font-size: 1.3vw;
+    padding: 1.15vw 2.75vw;
+    border: 1px solid white;
+    border-radius: 25vw;
+    background-color: white;
+    color: #FF4C24;
+    cursor: pointer;
+    font-weight: bold;
+}
+@media (max-width:950px) {
+    .hero-container {
+        height: 46vw;
+        margin-top: 1.6vw;
+    }
+    .hero-inner-container {
+        width: 75%;
+        gap: 2.5vw;
+    }
+    .hero-inner-container h2 {
+        font-size: 5vw;
+        line-height: 6vw;
+    }
+    .hero-inner-container p {
+        font-size: 1.75vw;
+        line-height: 2.25vw;
+    }
+    .hero-inner-container button {
+        font-size: 1.7vw; 
+        padding: 1.3vw 3vw;
+    }
+}
+@media (max-width: 768px) {
+    .hero-container {
+        height: 58vw;
+        margin-top: 1.65;
+    }
+    .hero-inner-container {
+        width: 75%;
+        gap: 3.5vw;
+        top: 50%;
+        bottom: 0;
+        left: 6vw;
+        transform: translateY(-50%);
+    }
+    .hero-inner-container h2 {
+        font-size: 6.5vw;
+        line-height: 7.5vw;
+    }
+    .hero-inner-container p {
+        font-size: 2.2vw;
+        line-height: 2.5vw;
+    }
+    .hero-inner-container button {
+        font-size: 2vw;
+        padding: 1.45vw 3.5vw;
+    }
+}
+@media (max-width: 600px) {
+    .hero-container {
+        height: 75vw;
+        background-position: left;
+    }
+    .hero-inner-container {
+        width: 90%;
+        gap: 3.75vw;
+        top: 50%;
+        bottom: 0;
+        left: 6vw;
+        transform: translateY(-50%);
+    }
+    .hero-inner-container h2 {
+        font-size: 8.5vw;
+        line-height: 9.5vw;
+    }
+    .hero-inner-container p {
+        font-size: 2.65vw;
+        line-height: 3vw;
+    }
+    .hero-inner-container button {
+        font-size: 3vw;
+        padding: 1.55vw 4.5vw;
+    }
+}

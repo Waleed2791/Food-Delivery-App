@@ -1,0 +1,211 @@
+.navbar-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw 3vw;
+    box-sizing: border-box;
+}
+.logo-container img {
+    width: 12vw;
+}
+.header-menu-container ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
+    list-style: none;
+}
+.header-menu-container ul li {
+    cursor: pointer;
+    padding-bottom: 3px;
+    font-size: 1.25vw;
+}
+.header-menu-container ul a {
+    cursor: pointer;
+    padding-bottom: 3px;
+    font-size: 1.25vw;
+}
+.header-menu-container ul .active {
+    border-bottom: 2px solid #FF4C24;
+    color: #FF4C24;
+}
+.header-right-container ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    gap: 2.5vw;
+}
+.header-right-container ul li {
+    cursor: pointer;
+    user-select: none;
+}
+.header-right-container ul li img {
+    width: 2.1vw;
+}
+.basket-icon-container {
+    position: relative;
+}
+.basket-counter {
+    width: 1.25vw;
+    height: 1.25vw;
+    font-size: 1vw;
+    background-color: #FF4C24;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -0.85vw;
+    right: -0.85vw;
+}
+.auth-button {
+    padding: 0.8vw 2.4vw;
+    border: 1px solid #49557E;
+    border-radius: 25vw;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.4s all ease;
+    font-size: 1.25vw;
+}
+.auth-button:hover {
+    background-color: #FF4C24;
+    border: 1px solid #FF4C24;
+    color: white;
+}
+.user-profile-outer-container {
+    position: relative;
+}
+.user-profile-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1vw;
+}
+.user-profile-container p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.user-profile-container p span:nth-child(1) {
+    font-size: 1vw;
+    font-weight: bold;
+}
+.user-profile-container p span:nth-child(2) {
+    font-size: 0.95vw;
+}
+.header-right-container ul li .user-profile-container img {
+    width: 2.5vw;
+    height: 2.5vw;
+    object-fit: cover;
+    object-position: top;
+    border: 1px solid #49557E;
+    border-radius: 50%;
+    padding: 0.5vw;
+}
+.menu-list-container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    position: absolute;
+    top: 4.5vw;
+    left: 1vw;
+    z-index: 9;
+    background-color: white;
+    border: 1px solid #e2e2e2;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.menu-list-container li {
+    font-size: 1.25vw;
+    font-weight: 500;
+    padding: 1.25vw 1.75vw;
+    border-bottom: 1px solid #e2e2e2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5vw;
+}
+.menu-list-container li:hover {
+    background-color: #f2f2f2;
+}
+.menu-list-container li img {
+    width: 1.75vw;
+}
+
+@media (max-width: 950px) {
+    .header-menu-container ul li {
+        font-size: 1.4vw;
+    }
+    .header-menu-container ul a {
+        font-size: 1.4vw;
+    }
+    .auth-button {
+        font-size: 1.35vw;
+    }
+    .logo-container img {
+        width: 14.5vw;
+    }
+}
+@media (max-width: 768px) {
+    .header-menu-container ul {
+        gap: 2vw;
+    }
+    .header-menu-container ul li {
+        font-size: 1.75vw;
+    }
+    .header-menu-container ul a {
+        font-size: 1.75vw;
+    }
+    .auth-button {
+        font-size: 1.75vw;
+        padding: 1vw 2.95vw;
+    }
+    .header-right-container ul li img {
+        width: 2.85vw;
+    }
+    .basket-counter {
+        width: 1.8vw;
+        height: 1.8vw;
+        font-size: 1.5vw;
+        top: -1.15vw;
+        right: -1.15vw;
+    }
+    .logo-container img {
+        width: 19vw;
+    }
+    .navbar-container {
+        padding: 3.5vw 3vw;
+    }
+}
+@media (max-width: 600px) {
+    .header-menu-container ul {
+        display: none;
+    }
+    .logo-container img {
+        width: 26vw;
+    }
+    .auth-button {
+        font-size: 2.4vw;
+        padding: 1.2vw 4vw;
+    }
+    .header-right-container ul li img {
+        width: 4vw;
+    }
+    .basket-counter {
+        width: 2.4vw;
+        height: 2.4vw;
+        font-size: 1.9vw;
+        top: -1.75vw;
+        right: -1.75vw;
+    }
+    .navbar-container {
+        padding: 4.5vw 3vw;
+    }
+    .header-right-container ul {
+        gap: 4vw;
+    }
+}
