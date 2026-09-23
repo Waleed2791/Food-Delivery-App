@@ -8,6 +8,7 @@ import Footer from './Components/Footer/Footer'
 import AuthModal from './Components/AuthModal/AuthModal'
 import Cart from './Pages/Cart/Cart'
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder'
+import Orders from './Pages/Orders/Orders';
 
 function App() {
   const [ShowAuthModal, setShowAuthModal] = useState(false);
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Home/>} />
             <Route path="/cart" element={<Cart/>} />
             <Route path="/PlaceOrder" element={<PlaceOrder/>} />
+            <Route path="/my-orders" element={<Orders/>} />
           </Routes>
         </div>
         <Footer></Footer>

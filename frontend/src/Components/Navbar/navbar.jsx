@@ -56,7 +56,7 @@ function navbar({ShowAuthModal}) {
                                     <img src={assets.profile_icon} alt={LoginUser.name} />
                                 </div>
                                 <ul className='menu-list-container' style={{ display: UserMenu===true? "block" : "none" }} >
-                                    <li>My Orders</li>
+                                    <Link to="/my-orders">My Orders</Link>
                                     <li onClick={(e)=>{ e.stopPropagation(); logoutUser();}}><img src={assets.logout_icon} alt='logout' /> <span>Sign Out</span></li>
                                 </ul>
                             </div>

@@ -119,7 +119,8 @@
     border: 1px solid #e2e2e2;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.menu-list-container li {
+.menu-list-container li,
+.menu-list-container a  {
     font-size: 1.25vw;
     font-weight: 500;
     padding: 1.25vw 1.75vw;
@@ -129,7 +130,8 @@
     align-items: center;
     gap: 0.5vw;
 }
-.menu-list-container li:hover {
+.menu-list-container li:hover,
+.menu-list-container a:hover {
     background-color: #f2f2f2;
 }
 .menu-list-container li img {

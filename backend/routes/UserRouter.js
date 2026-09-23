@@ -7,6 +7,8 @@ const UserRouter = express.Router()
 
 UserRouter.post("/login", loginUser)
 UserRouter.post("/add", RegisterUser)
+
+// For Admin
 UserRouter.get("/list", authMiddleware, adminMiddleware, getUsers);
 
 export default UserRouter;
