@@ -5,7 +5,7 @@ const OrderSchema = new mongoose.Schema({
     items:{type:Array, required:true},
     amount:{type:Number, required:true},
     status:{type: String,enum: ["Preparing", "Out for Delivery", "Delivered", "Cancelled"],default: "Preparing"},
-    payment:{type:Boolean, required:true, default:false},
+    payment:{type:Boolean, required:true},
     createdAt:{type: Date,default: Date.now}
 })
 
